@@ -1,0 +1,8 @@
+bs4
+tldextract
+selenium
+numpy
+gensim
+scikit-learn==0.23.0
+flask
+flask_cors
