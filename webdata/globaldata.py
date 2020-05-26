@@ -9,8 +9,14 @@ import sqlite3
 
 
 def site_info_by_cluster(cluster_no=-1, limit=None):
+  
   """ yield list [url, embeddings, cluster, rank] for url belong to *cluster_no*
-      or of every cluster if *cluster_no* = -1.  """
+      or of every cluster if *cluster_no* = -1.  
+      
+      Note-: support cluster_no as list of integers, in this case it yield info for all 
+      cluster belongs to that list 
+      
+  """
   
   try:
     conn = sqlite3.connect(DB_PATH)
@@ -18,7 +24,14 @@ def site_info_by_cluster(cluster_no=-1, limit=None):
 
     #make query string
     query = 'SELECT *  FROM siteinfo'
-    if cluster_no != -1: query += ' WHERE cluster = ' + str(cluster_no)
+    
+    if(type(cluster_no) == int and cluster_no != -1): 
+      query += ' WHERE cluster = ' + str(cluster_no)
+    
+    if(type(cluster_no) == list):
+      query += ' WHERE cluster IN (' + ', '.join([str(i) for i in cluster_no]) + ')'
+
+    
     if limit is not None: query += ' LIMIT ' + str(limit)
 
     rows = cur.execute(query)
