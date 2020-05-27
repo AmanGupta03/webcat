@@ -18,7 +18,7 @@ from webdata.trendsdata import get_all_info, cluster_info_bw_date
 from webdata.globaldata import get_cluster_websites
 from webtools.search import search_by_domain, search_by_query
 from webtools.processurl import get_processed_info
-
+from settings import *
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -80,6 +80,10 @@ def get_info_route():
 @app.route('/getClusterData/<startDate>/<endDate>/<int:cluster_no>')
 @cross_origin()
 def getClusterData(startDate,endDate,cluster_no):
+  if(startDate<DB_FIRST_DATE):
+    startDate = DB_FIRST_DATE
+  if(endDate>DB_DATE):
+    endDate = DB_DATE
   return json.dumps(cluster_info_bw_date(cluster_no-1, startDate,endDate))
   #return []
 
