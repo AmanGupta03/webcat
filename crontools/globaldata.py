@@ -26,13 +26,12 @@ def add_new_records(cur_date):
 
     query = 'INSERT INTO sitedata (' + ', '.join(col) + ') VALUES (' + ', '.join(ques) + ')'
 
-    for row in temp_read():
+    for row in tqdm(temp_read()):
       values = [row[0], str(cur_date), row[2]]
       values.extend([-1]*30)
       cur.execute(query, tuple(values))
-      conn.commit()
       cur.execute('INSERT INTO siteinfo (url, embedding, cluster, rank) VALUES (?,?,?,?)', (row[0], row[1], -1, -1))
-      conn.commit()
+    conn.commit()
     
     print("Successfully added new records")
   except sqlite3.Error as error:
