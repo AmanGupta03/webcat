@@ -14,7 +14,7 @@ from flask import Flask
 import urllib.parse
 import json
 import os
-from webdata.trendsdata import get_all_info, cluster_info_bw_date
+from webdata.trendsdata import get_all_info, cluster_info_bw_date,allClusterDataOfRank,allClusterDataOfSize
 from webdata.globaldata import get_cluster_websites
 from webtools.search import search_by_domain, search_by_query
 from webtools.processurl import get_processed_info
@@ -27,6 +27,15 @@ app.config['CORS_HEADERS'] = '*'
 
 ASSETS_DIR = os.path.dirname(os.path.abspath(__file__))
 print('READY')
+
+
+@app.route('/getAllClusterDataOfSize/<Date>')
+def getAllClusterDataOfSize(Date):
+    return json.dumps(allClusterDataOfSize(Date))
+  
+@app.route('/getAllClusterDataOfRank/<Date>')
+def getAllClusterDataOfRank(Date):
+    return json.dumps(allClusterDataOfRank(Date))
 
 
 @app.route('/<path:url>')
