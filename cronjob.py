@@ -13,6 +13,8 @@ LIMIT = CRON_SETTINGS['LIMIT']
 def getting_update(cur_date):
   """ it will fetch and scrap all the updates for current date """
 
+  print('This will update database using cisco ranklist of', cur_date)
+  
   print('Fetching cisco ranklist...')
   urls = newdomains.fetch_ranklist(cur_date)
   
