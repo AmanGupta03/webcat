@@ -104,8 +104,14 @@ def allClusterData(endDate,tableName):
     if(strDate<DB_FIRST_DATE or endDate>DB_DATE): return [] 
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
-    cur.execute("SELECT * from "+str(tableName)+" where date_p between ? and ?",(strDate,endDate))
-    rows=cur.fetchall()
+    cursor1 = cur.execute("SELECT * from "+str(tableName)+" where date_p between ? and ?",(strDate,endDate))
+    cursor2 = cur.execute("SELECT * from size where date_p between ? and ?",(strDate,endDate))
+    if(tableName=='rank'):
+      sizes_to_average=cursor2.fetchall()
+      for i in range(1,101):
+        rows[1][i]/=sizes_to_average[1][i]
+        rows[0][i]/=sizes_to_average[0][i]
+    rows=cursor1.fetchall()
     dataList=[]
     for i in range(1,101):
       dataList.append({'date':endDate,'cluster_no':i,'cluster_name':i,'primary':rows[1][i],'secondary':rows[1][i]-rows[0][i]})
