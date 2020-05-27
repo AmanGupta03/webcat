@@ -154,7 +154,7 @@ def fast_scrap(urls):
   with ProcessPoolExecutor(max_workers=WORKERS) as executor:
     futures = [executor.submit(get_all_info, url) for url in urls]
 
-    for result in tqdm(as_completed(futures)):
+    for result in as_completed(futures):
       if result.result() is not None:
         temp_insert(result.result())
 

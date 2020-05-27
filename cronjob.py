@@ -67,6 +67,8 @@ def update(cur_date, urls):
 str_to_date = lambda s: date(int(s[0:4]),int(s[5:7]),int(s[8:10]))
 cur_date = str_to_date(DB_DATE) + timedelta(days=1)
 
+newdomains.temp_clear()
+
 urls = getting_update(cur_date)
 #SHUT DOWN SERVER HERE.....
 update(cur_date, urls)
