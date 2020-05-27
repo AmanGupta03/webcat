@@ -83,12 +83,17 @@ def run(workers=None, batch_size=None):
   print('Ready to perform all updates from', cur_date, 'to', till_date, '\n')
   
   while(cur_date <= till_date):
-    newdomains.temp_clear()
-    urls, url_to_scrap = getting_update(cur_date, workers, batch_size)
-    #SHUT DOWN SERVER HERE.....
-    update(cur_date, urls, url_to_scrap)
-    #RESTART SERVER HERE....
-    cur_date += timedelta(days=1)
+    try:
+      newdomains.temp_clear()
+      urls, url_to_scrap = getting_update(cur_date, workers, batch_size)
+      #SHUT DOWN SERVER HERE.....
+      update(cur_date, urls, url_to_scrap)
+      #RESTART SERVER HERE....
+      cur_date += timedelta(days=1)
+    except Exception as e:
+      print('Error while updating at', cur_date, e)
+      print('Stop updates')
+      break
   
 if len(sys.argv) == 1: run()
 if len(sys.argv) == 2: run(int(sys.argv[1]))
