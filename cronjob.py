@@ -25,7 +25,7 @@ def getting_update(cur_date, workers, batch_size):
   print('\n',len(url_to_scrap), 'new domains found')
   
   print('\nScrapping urls...')
-  newdomains.fast_scrap_batches(url_to_scrap[:100], workers, batch_size)
+  newdomains.fast_scrap_batches(url_to_scrap, workers, batch_size)
 
   return urls, url_to_scrap
 
@@ -86,7 +86,7 @@ def run(workers=None, batch_size=None):
     newdomains.temp_clear()
     urls, url_to_scrap = getting_update(cur_date, workers, batch_size)
     #SHUT DOWN SERVER HERE.....
-    update(cur_date, urls, url_to_scrap[:100])
+    update(cur_date, urls, url_to_scrap)
     cur_date += timedelta(days=1)
   
 if len(sys.argv) == 1: run()
