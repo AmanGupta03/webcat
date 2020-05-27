@@ -14,7 +14,7 @@ from flask import Flask
 import urllib.parse
 import json
 import os
-from webdata.trendsdata import get_all_info, cluster_info_bw_date,allClusterData
+from webdata.trendsdata import get_all_info, cluster_info_bw_date,allClusterData,keywords_by_cluster
 from webdata.globaldata import get_cluster_websites
 from webtools.search import search_by_domain, search_by_query
 from webtools.processurl import get_processed_info
@@ -111,6 +111,18 @@ def getOneDayClusterData(endDate,cluster_no):
   except Exception as e:
     print("Error with one date Cluster Data api ",e)
     return json.dumps([])
+
+@app.roue('/getClusterInfo/<int:cluster_no>')
+@cross_origin()
+def getClusterInfo(cluster_no):
+  try:
+    keywords=keywords_by_cluster(cluster_no)
+    kmeans=load_obj(KMEANS_PATH)
+    centroids = kmeans.cluster_centers_
+    sites = sorted([(norm(row[1]-centroids[cluster_no-1]), row[0], row[3] if row[3] != -1 else DB_DEFAULT_RANK) for row in site_info_by_cluster(cluster_no, limit=limit)], key=lambda x: x[0])
+    final= sorted([{'url': v[1], 'rank': v[2]} for v in sites[:result]], key=lambda x: x['rank'])
+    return json.dumps(keywords,final)
+
 
 @app.route('/getAllClusterDataOfSize/<Date>')
 def getAllClusterDataOfSize(Date):
