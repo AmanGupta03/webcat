@@ -97,6 +97,7 @@ def getOneDayClusterData(endDate,cluster_no):
       startDate = DB_FIRST_DATE
     if(endDate>DB_DATE):
       endDate = DB_DATE
+    print("one day cluster day data",startDate, endDate)
     newDictList = cluster_info_bw_date(cluster_no-1, startDate,endDate)
     if(newDictList[0]['date']==str(endDate) or newDictList[-1]['date']==str(endDate)):
       clusterData={}
