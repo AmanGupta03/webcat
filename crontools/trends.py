@@ -2,7 +2,7 @@ from crontools.keywords import get_all_keywords
 from sklearn import cluster, metrics
 from collections import defaultdict
 from crontools.insert import insertData
-from settings import KMEANS_PATH
+from settings import KMEANS_PATH, DB_DEFAULT_RANK
 from crontools import globaldata
 import pickle
 
@@ -30,8 +30,8 @@ def getRankSizeData():
 
   for row in data:
     sizeDict[row[0]]+=1
-    if row[1]==None:
-      rankDict[row[0]]+=200000
+    if row[1]==-1:
+      rankDict[row[0]]+=DB_DEFAULT_RANK
     else:
      rankDict[row[0]]+=row[1]
   
