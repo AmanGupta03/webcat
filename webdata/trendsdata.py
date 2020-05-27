@@ -106,7 +106,7 @@ def allClusterData(endDate,tableName):
     cur = conn.cursor()
     cursor1 = cur.execute("SELECT * from "+str(tableName)+" where date_p between ? and ?",(strDate,endDate))
     cursor2 = cur.execute("SELECT * from size where date_p between ? and ?",(strDate,endDate))
-    if(tableName=='rank'):
+    if(tableName=='RANK'):
       sizes_to_average=cursor2.fetchall()
       for i in range(1,101):
         rows[1][i]/=sizes_to_average[1][i]
