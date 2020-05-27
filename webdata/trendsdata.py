@@ -96,3 +96,23 @@ def cluster_info_bw_date(cluster=0, start=DB_FIRST_DATE, end=DB_DATE):
   except Exception as e:
     print('error in cluster_info_bw_date', e)
     return []
+  
+def allClusterData(endDate,tableName):
+    """ return list of objects of 100 clusters which consist of rank,rank change with respect to previous 
+    day information i.e  {date,cluster_no,cluster_name,rank,rankchange}"""
+
+  try:
+    str_to_date = lambda s: date(int(s[0:4]),int(s[5:7]),int(s[8:10]))
+    strDate=str(str_to_date(endDate)-timedelta(days=1))
+    if(strDate<DB_FIRST_DATE or endDate>DB_DATE): return [] 
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("SELECT * from "+str(tableName)+" where date_p between ? and ?",(strDate,endDate))
+    rows=cur.fetchall()
+    dataList=[]
+    for i in range(1,101):
+      dataList.append({'date':endDate,'cluster_no':i,'cluster_name':i,'primary':rows[1][i],'secondary':rows[1][i]-rows[0][i]})
+    return dataList  
+  except Exception as e:
+    print('error fetching data from rank table', e)
+    return []
