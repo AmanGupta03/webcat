@@ -26,7 +26,7 @@ def getting_update(cur_date):
   print('\n',len(url_to_scrap), 'new domains found')
   
   print('\nScrapping urls...')
-  newdomains.fast_scrap_batches(url_to_scrap[:20])
+  newdomains.fast_scrap_batches(url_to_scrap)
 
   return urls
 
