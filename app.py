@@ -29,15 +29,6 @@ ASSETS_DIR = os.path.dirname(os.path.abspath(__file__))
 print('READY')
 
 
-@app.route('/getAllClusterDataOfSize/<Date>')
-def getAllClusterDataOfSize(Date):
-    return json.dumps(allClusterData(Date,'SIZE'))
-  
-@app.route('/getAllClusterDataOfRank/<Date>')
-def getAllClusterDataOfRank(Date):
-    return json.dumps(allClusterData(Date,'RANK'))
-
-
 @app.route('/<path:url>')
 @app.route('/')
 @cross_origin()
@@ -120,6 +111,15 @@ def getOneDayClusterData(endDate,cluster_no):
   except Exception as e:
     print("Error with one date Cluster Data api ",e)
     return json.dumps([])
+
+@app.route('/getAllClusterDataOfSize/<Date>')
+def getAllClusterDataOfSize(Date):
+    return json.dumps(allClusterData(Date,'SIZE'))
+  
+@app.route('/getAllClusterDataOfRank/<Date>')
+def getAllClusterDataOfRank(Date):
+    return json.dumps(allClusterData(Date,'RANK'))
+  
 
 if __name__ == '__main__':
     app.run(host= '0.0.0.0',use_reloader=False,debug=True)
