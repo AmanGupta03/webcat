@@ -98,8 +98,6 @@ def cluster_info_bw_date(cluster=0, start=DB_FIRST_DATE, end=DB_DATE):
     return []
   
 def allClusterData(endDate,tableName):
-    """ return list of objects of 100 clusters which consist of rank,rank change with respect to previous 
-    day information i.e  {date,cluster_no,cluster_name,rank,rankchange}"""
   try:
     str_to_date = lambda s: date(int(s[0:4]),int(s[5:7]),int(s[8:10]))
     strDate=str(str_to_date(endDate)-timedelta(days=1))
