@@ -26,7 +26,7 @@ def getting_update(cur_date):
   print('\n',len(url_to_scrap), 'new domains found')
   
   print('\nScrapping urls...')
-  newdomains.fast_scrap_batches(url_to_scrap)
+  newdomains.fast_scrap_batches(url_to_scrap[:20])
 
   return urls
 
@@ -47,6 +47,7 @@ def update(cur_date, urls):
   ranks = newdomains.get_adjusted_ranks(cur_date, new_urls, urls)
 
   print('performing updates on global_data.....')
+
   globaldata.add_new_records(cur_date)
   globaldata.delete_records(cur_date) 
   globaldata.update_rank(list(ranks.items()))

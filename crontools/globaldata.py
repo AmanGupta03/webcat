@@ -10,7 +10,8 @@ import sqlite3
 
 def add_new_records(cur_date):
   """ Append new records in global_data """
-  
+
+  print('Adding new records...')  
   try:
     conn = sqlite3.connect(DB_PATH) 
     cur = conn.cursor()
@@ -29,8 +30,10 @@ def add_new_records(cur_date):
       values = [row[0], str(cur_date), row[2]]
       values.extend([-1]*30)
       cur.execute(query, tuple(values))
+      conn.commit()
       cur.execute('INSERT INTO siteinfo (url, embedding, cluster, rank) VALUES (?,?,?,?)', (row[0], row[1], -1, -1))
-    conn.commit()
+      conn.commit()
+    
     print("Successfully added new records")
   except sqlite3.Error as error:
     print("Error while adding new records ", error)
@@ -42,11 +45,10 @@ def delete_records(cur_date):
   """ Delete all records that doesn't enter in ranklist for given duration """
 
   expired = str(cur_date-timedelta(days=WINDOW))
-
+  print('Deleting records prior to', expired, '...')
   try:
     conn = sqlite3.connect(DB_PATH) 
     cur = conn.cursor()
-    print(expired)
     cur.execute("SELECT url FROM sitedata WHERE date = ?", (expired,))
     urls = [row[0] for row in cur.fetchall()]
     cur.execute("DELETE FROM sitedata WHERE date = ?", (expired,))
@@ -64,6 +66,7 @@ def delete_records(cur_date):
 def update_rank(ranks):
   """ update rank_d1 to rank_d30 in sitedata and rank in siteinfo """
 
+  print('updating ranks in globaldata...')
   query = "UPDATE sitedata SET "
   for i in range(1, 30):
     query += "rank_d" + str(i) + " = " + "rank_d" + str(i+1)
@@ -90,7 +93,7 @@ def update_rank(ranks):
 
 def update_cluster(clusters):
   """ update cluster no of new_domains in global_data """
-
+  print('updating cluster info...')
   try:
     conn = sqlite3.connect(DB_PATH) 
     cur = conn.cursor()
@@ -109,7 +112,7 @@ def update_cluster(clusters):
 
 def update_date(urls, cur_date):
   """ update date of all domains global_data"""
-
+  print('updating date...')
   try:
     conn = sqlite3.connect(DB_PATH) 
     cur = conn.cursor()
@@ -147,7 +150,6 @@ def get_keyword_dict(url):
       conn = sqlite3.connect(DB_PATH) 
       cur = conn.cursor()
       row = cur.execute('SELECT content from sitedata where url=?', (url,)).fetchone()
-      print(row)
     
       return { w.split(':')[0] : int(w.split(':')[1]) for w in row[0].split()}
 
