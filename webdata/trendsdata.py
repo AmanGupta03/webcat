@@ -80,16 +80,16 @@ def cluster_info_bw_date(cluster=0, start=DB_FIRST_DATE, end=DB_DATE):
   """ return list of dictionary with fields ('date', keywords, rank, size) 
       Note it assume 0 based indexing of cluster """
 
+
   str_to_date = lambda s: date(int(s[0:4]),int(s[5:7]),int(s[8:10]))
   start = str_to_date(start)
   end = str_to_date(end)
-
   try:
     res = []
     while(start <= end):
       data = cluster_all_info(cluster, start)
       rank = DB_DEFAULT_RANK
-      if data['size'] > 0: rank =  data['rank'] // data['size'] 
+      if data['size'] > 0: rank =  data['rank'] // data['size']
       res.append({'rank':rank, 'keywords':data['keywords'], 'size': data['size'], 'date':str(start)})
       start += timedelta(days=1)
     return res
