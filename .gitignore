@@ -2,6 +2,6 @@ env
 venv
 __pycache__
 *.pyc
-*.db
+web.db
 *.out
 
