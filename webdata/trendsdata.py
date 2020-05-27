@@ -80,8 +80,7 @@ def cluster_info_bw_date(cluster=0, start=DB_FIRST_DATE, end=DB_DATE):
   """ return list of dictionary with fields ('date', keywords, rank, size) 
       Note it assume 0 based indexing of cluster """
 
-  start = max(start, DB_FIRST_DATE)
-  end = min(end, DB_DATE)
+
   str_to_date = lambda s: date(int(s[0:4]),int(s[5:7]),int(s[8:10]))
   start = str_to_date(start)
   end = str_to_date(end)
