@@ -31,11 +31,11 @@ print('READY')
 
 @app.route('/getAllClusterDataOfSize/<Date>')
 def getAllClusterDataOfSize(Date):
-    return json.dumps(allClusterDataOfSize(Date))
+    return json.dumps(allClusterData(Date,'SIZE'))
   
 @app.route('/getAllClusterDataOfRank/<Date>')
 def getAllClusterDataOfRank(Date):
-    return json.dumps(allClusterDataOfRank(Date))
+    return json.dumps(allClusterData(Date,'RANK'))
 
 
 @app.route('/<path:url>')
