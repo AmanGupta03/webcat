@@ -106,15 +106,14 @@ def allClusterData(endDate,tableName):
     cur = conn.cursor()
     cursor1 = cur.execute("SELECT * from "+str(tableName)+" where date_p between ? and ?",(strDate,endDate))
     cursor2 = cur.execute("SELECT * from size where date_p between ? and ?",(strDate,endDate))
-    if(tableName=='RANK'):
-      sizes_to_average=cursor2.fetchall()
-      for i in range(1,101):
-        rows[1][i]/=sizes_to_average[1][i]
-        rows[0][i]/=sizes_to_average[0][i]
+    sizes_to_average=cursor2.fetchall()
     rows=cursor1.fetchall()
     dataList=[]
     for i in range(1,101):
-      dataList.append({'date':endDate,'cluster_no':i,'cluster_name':i,'primary':rows[1][i],'secondary':rows[1][i]-rows[0][i]})
+      if(tableName=='RANK'):
+        dataList.append({'date':endDate,'cluster_no':i,'cluster_name':i,'primary':rows[1][i]/sizes_to_average[1][i],'secondary':(rows[1][i]/sizes_to_average[1][i])-rows[0][i]/sizes_to_average[0][i]})
+      else:
+        dataList.append({'date':endDate,'cluster_no':i,'cluster_name':i,'primary':rows[1][i],'secondary':rows[1][i]-rows[0][i]})
     return dataList  
   except Exception as e:
     print('error fetching data from rank table', e)
