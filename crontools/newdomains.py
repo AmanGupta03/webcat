@@ -14,6 +14,7 @@ CISCO_RANKLIST = 'http://s3-us-west-1.amazonaws.com/umbrella-static/top-1m-{date
 TEMP_DB_PATH = CRON_SETTINGS['TEMP_DB_PATH']
 WORKERS = CRON_SETTINGS['WORKERS']
 BATCH_SIZE = CRON_SETTINGS['BATCH_SIZE']
+BLACKLIST_TIME = CRON_SETTINGS['BLACKLIST_TIME']
 
 
 def fetch_ranklist(date):
@@ -104,6 +105,13 @@ def get_url_to_scrap(urls):
   return url_to_scrap
 
 
+def get_reject_list(all_urls, scrapped_urls):
+  """ return list of rejected urls """
+
+  domains = set([extract(url).domain for url in scrapped_urls])
+  return [url for url in all_urls if extract(url).domain not in domains]
+
+
 def temp_insert(values):
   """ insert data in temporary databse """
 
@@ -148,10 +156,10 @@ def temp_clear():
     if (conn): conn.close()
 
 
-def fast_scrap(urls):
+def fast_scrap(urls, workers=WORKERS):
   """ Avoid dynamic content scrapping as webdriver cannot handle multiprocessing """
 
-  with ProcessPoolExecutor(max_workers=WORKERS) as executor:
+  with ProcessPoolExecutor(max_workers=workers) as executor:
     futures = [executor.submit(get_all_info, url) for url in urls]
 
     for result in as_completed(futures):
@@ -159,19 +167,19 @@ def fast_scrap(urls):
         temp_insert(result.result())
 
 
-def fast_scrap_batches(urls):
+def fast_scrap_batches(urls, workers=WORKERS, batch_size=BATCH_SIZE):
   """ 
     This will scrap only domains upto 'batch_size' in one go. 
     this is necessary to minimize loss during failure in fast_scrap
   """
   
-  total_phase = ceil(len(urls)/BATCH_SIZE)
-  print('scrapping will be done in', total_phase, 'phase  where', BATCH_SIZE, 'urls attempt in each phase')
+  total_phase = ceil(len(urls)/batch_size)
+  print('scrapping will be done in', total_phase, 'phase  where', batch_size, 'urls attempt in each phase')
 
   for i in tqdm(range(total_phase)):
     try:
-      l = BATCH_SIZE*i;
-      r = BATCH_SIZE*(i+1) 
+      l = batch_size*i;
+      r = batch_size*(i+1) 
       fast_scrap(urls[l:r])
     except:
       print('phase', i, 'failed')
@@ -208,6 +216,21 @@ def get_adjusted_ranks(cur_date, new_urls, urls):
   return ranks
 
 
+def delete_blacklisted(cur_date):
+  """ delete entries that are blacklisted for more than $BLACKLIST_TIME """
+
+  expired = str(cur_date-timedelta(days=BLACKLIST_TIME))
+  try:
+    conn = sqlite3.connect(DB_PATH) 
+    cur = conn.cursor()
+    cur.execute("DELETE FROM visited WHERE status=0 and date = ?", (expired,))
+    conn.commit()
+  except sqlite3.Error as error:
+    print(error)
+  finally:
+    if (conn): conn.close()
+
+
 
 def delete_visited_domain(cur_date):
   """ delete all entries in visited_domains table that are 30days old """
@@ -223,10 +246,10 @@ def delete_visited_domain(cur_date):
     if (conn): conn.close()
 
 
-def add_new_visited_domains(new_url, cur_date):
+def add_new_visited_domains(new_url, cur_date, status=1):
   """ Add new entries in visited table, that found at cur_date """
 
-  row = [[url, str(cur_date), 1] for url in new_url]
+  row = [[url, str(cur_date), status] for url in new_url]
   df = pd.DataFrame(row, columns=['url', 'date', 'status'])
   df.set_index('url', inplace=True)
 
