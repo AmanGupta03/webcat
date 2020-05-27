@@ -3,7 +3,7 @@ package to scrap text content from website, and preprocessing
 
 """
 
-__all__ = ['dictionary', 'lemma', 'embd', 'AVOID',  'DIMENSION']
+__all__ = ['dictionary', 'lemma', 'embd', 'AVOID',  'DIMENSION', 'MAX_WORDS']
 
 from settings import *
 import sqlite3 
