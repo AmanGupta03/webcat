@@ -103,9 +103,9 @@ def allClusterData(endDate,tableName):
     strDate=str(str_to_date(endDate)-timedelta(days=1))
     if(strDate<DB_FIRST_DATE or endDate>DB_DATE): return [] 
     conn = sqlite3.connect(DB_PATH)
-    cur = conn.cursor()
-    cursor1 = cur.execute("SELECT * from "+str(tableName)+" where date_p between ? and ?",(strDate,endDate))
-    cursor2 = cur.execute("SELECT * from size where date_p between ? and ?",(strDate,endDate))
+#     cur = conn.cursor()
+    cursor1 = conn.execute("SELECT * from "+str(tableName)+" where date_p between ? and ?",(strDate,endDate))
+    cursor2 = conn.execute("SELECT * from size where date_p between ? and ?",(strDate,endDate))
     sizes_to_average=cursor2.fetchall()
     rows=cursor1.fetchall()
     dataList=[]
