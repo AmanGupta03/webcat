@@ -7,3 +7,5 @@ scikit-learn==0.23.0
 flask
 flask_cors
 gdown
+nltk
+pandas

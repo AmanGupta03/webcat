@@ -3,6 +3,7 @@
 
 from gensim.parsing.preprocessing import STOPWORDS
 from gensim.utils import tokenize
+from nltk import FreqDist
 from webutils import *
 import numpy as np
 
@@ -36,6 +37,24 @@ def sent_embedding(sentence):
       return -: sentence embedding as numpy array or None in case of failure """
 
   return average_word_embedding(sentence.split())
+
+
+def sent_embedding_in_bytes(sentence):
+  """ param -: space seprated string 
+      return -: sentence embedding as numpy array in bytes or None in case of failure """
+  try:
+    return sent_embedding(sentence).tostring()
+  except:
+    return None
+
+
+def compress_sentence(sentence):
+  """ param -: space seprated string  
+      return -: compressed space seprated string in form of 'word1:freq1 word2:freq2' 
+      arranged in descending order by frequency """
+
+  freq_lst = FreqDist(sentence.split()).most_common(MAX_WORDS)
+  return ' '.join([row[0]+':'+str(row[1]) for row in freq_lst])
 
 
 def lemmatize(word):
