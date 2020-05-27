@@ -87,6 +87,7 @@ def run(workers=None, batch_size=None):
     urls, url_to_scrap = getting_update(cur_date, workers, batch_size)
     #SHUT DOWN SERVER HERE.....
     update(cur_date, urls, url_to_scrap)
+    #RESTART SERVER HERE....
     cur_date += timedelta(days=1)
   
 if len(sys.argv) == 1: run()
