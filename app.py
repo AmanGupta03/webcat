@@ -92,11 +92,9 @@ def getClusterData(startDate,endDate,cluster_no):
 @cross_origin()
 def getOneDayClusterData(endDate,cluster_no):
   try:
-    startDate=str(date(int(endDate[0:4]),int(endDate[5:7]),int(endDate[8:10]))-timedelta(days=1))
-    if(startDate<DB_FIRST_DATE):
-      startDate = DB_FIRST_DATE
     if(endDate>DB_DATE):
       endDate = DB_DATE
+    startDate=str(date(int(endDate[0:4]),int(endDate[5:7]),int(endDate[8:10]))-timedelta(days=1))
     print("one day cluster day data",startDate, endDate)
     newDictList = cluster_info_bw_date(cluster_no-1, startDate,endDate)
     if(newDictList[0]['date']==str(endDate) or newDictList[-1]['date']==str(endDate)):
