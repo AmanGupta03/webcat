@@ -5,7 +5,7 @@ def insertData(data,tableName,scriptDate):
   try:
     conn = sqlite3.connect(DB_PATH) 
     cur = conn.cursor()
-    if(tableName=='KEYWORDS'):
+    if(tableName=='keywords'):
       dataStr = dictToStrforkeywords(data)
     else:
       dataStr = dictToStr(data)
