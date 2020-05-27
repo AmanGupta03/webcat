@@ -99,7 +99,7 @@ def update_cluster(clusters):
     cur = conn.cursor()
     
     for row in tqdm(clusters):
-      cur.execute('UPDATE siteinfo SET cluster=? WHERE url=?', (row[1], row[0]))
+      cur.execute('UPDATE siteinfo SET cluster=? WHERE url=?', (int(row[1]), row[0]))
 
     conn.commit()
     print("Successfully update cluster no.")
@@ -150,7 +150,6 @@ def get_keyword_dict(url):
       conn = sqlite3.connect(DB_PATH) 
       cur = conn.cursor()
       row = cur.execute('SELECT content from sitedata where url=?', (url,)).fetchone()
-    
       return { w.split(':')[0] : int(w.split(':')[1]) for w in row[0].split()}
 
     except sqlite3.Error as error:

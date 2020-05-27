@@ -5,7 +5,10 @@ def insertData(data,tableName,scriptDate):
   try:
     conn = sqlite3.connect(DB_PATH) 
     cur = conn.cursor()
-    dataStr = dictToStr(data)
+    if(tableName=='keywords'):
+      dataStr = dictToStrforkeywords(data)
+    else:
+      dataStr = dictToStr(data)
     colStr=getColStr()
     cur.execute("INSERT INTO "+str(tableName)+"("+colStr+")\
      VALUES ('"+scriptDate+"',"+dataStr+")")
@@ -26,6 +29,13 @@ def getColStr():
 
 
 def dictToStr(data):
+  dataStr=""
+  for x in range(99):
+    dataStr = dataStr+''+str(data[x])+''+','
+  dataStr = dataStr+''+str(data[99])+''
+  return dataStr
+
+def dictToStrforkeywords(data):
   dataStr=""
   for x in range(99):
     dataStr = dataStr+'"'+str(data[x])+'"'+','
