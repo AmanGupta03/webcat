@@ -14,7 +14,7 @@ from flask import Flask
 import urllib.parse
 import json
 import os
-from webdata.trendsdata import get_all_info, cluster_info_bw_date,allClusterDataOfRank,allClusterDataOfSize
+from webdata.trendsdata import get_all_info, cluster_info_bw_date,allClusterData
 from webdata.globaldata import get_cluster_websites
 from webtools.search import search_by_domain, search_by_query
 from webtools.processurl import get_processed_info
