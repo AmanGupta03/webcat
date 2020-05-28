@@ -1,0 +1,373 @@
+nohup: ignoring input
+initializing...
+loading database updates...
+loading kmeans..
+loading word vectors...
+READY
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+27.56.245.116 - - [28/May/2020 06:03:56] "[37mGET /msg91.com/1 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:05:45] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:05:58] "[37mGET /getOneDayClusterData/2020-05-28/5 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:05:58] "[37mGET /getclusterurl/5/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:06:08] "[37mGET /getOneDayClusterData/2020-05-28/58 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:06:08] "[37mGET /getclusterurl/58/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:06:16] "[37mGET /getOneDayClusterData/2020-05-28/6 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:06:16] "[37mGET /getclusterurl/6/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:06:34] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:06:40] "[35m[1mGET /search/query/gjhyjutts HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/ec2-user/webcat/app.py", line 67, in query_search
+    return json.dumps(search_by_query(q,cluster_no-1))
+  File "/home/ec2-user/webcat/webtools/search.py", line 14, in search_by_query
+    sites = sorted([(norm(row[1]-embd), row[0], row[3] if row[3] != -1 else DB_DEFAULT_RANK) for row in site_info_by_cluster(cluster, limit=limit)], key=lambda x: x[0])
+  File "/home/ec2-user/webcat/webtools/search.py", line 14, in <listcomp>
+    sites = sorted([(norm(row[1]-embd), row[0], row[3] if row[3] != -1 else DB_DEFAULT_RANK) for row in site_info_by_cluster(cluster, limit=limit)], key=lambda x: x[0])
+TypeError: unsupported operand type(s) for -: 'float' and 'NoneType'
+27.56.245.116 - - [28/May/2020 06:06:43] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:06:53] "[35m[1mGET /search/query/myntra HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/ec2-user/webcat/app.py", line 67, in query_search
+    return json.dumps(search_by_query(q,cluster_no-1))
+  File "/home/ec2-user/webcat/webtools/search.py", line 14, in search_by_query
+    sites = sorted([(norm(row[1]-embd), row[0], row[3] if row[3] != -1 else DB_DEFAULT_RANK) for row in site_info_by_cluster(cluster, limit=limit)], key=lambda x: x[0])
+  File "/home/ec2-user/webcat/webtools/search.py", line 14, in <listcomp>
+    sites = sorted([(norm(row[1]-embd), row[0], row[3] if row[3] != -1 else DB_DEFAULT_RANK) for row in site_info_by_cluster(cluster, limit=limit)], key=lambda x: x[0])
+TypeError: unsupported operand type(s) for -: 'float' and 'NoneType'
+27.56.245.116 - - [28/May/2020 06:07:03] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:07:04] "[37mGET /getOneDayClusterData/2020-05-28/1 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:07:04] "[37mGET /getclusterurl/1/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:07:05] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:07:07] "[35m[1mGET /search/query/myntra HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ec2-user/webcat/venv/lib/python3.7/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/ec2-user/webcat/app.py", line 67, in query_search
+    return json.dumps(search_by_query(q,cluster_no-1))
+  File "/home/ec2-user/webcat/webtools/search.py", line 14, in search_by_query
+    sites = sorted([(norm(row[1]-embd), row[0], row[3] if row[3] != -1 else DB_DEFAULT_RANK) for row in site_info_by_cluster(cluster, limit=limit)], key=lambda x: x[0])
+  File "/home/ec2-user/webcat/webtools/search.py", line 14, in <listcomp>
+    sites = sorted([(norm(row[1]-embd), row[0], row[3] if row[3] != -1 else DB_DEFAULT_RANK) for row in site_info_by_cluster(cluster, limit=limit)], key=lambda x: x[0])
+TypeError: unsupported operand type(s) for -: 'float' and 'NoneType'
+27.56.245.116 - - [28/May/2020 06:07:13] "[37mGET /search/domain/myntra HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:07:32] "[37mGET /getOneDayClusterData/2020-05-28/24 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:07:32] "[37mGET /getclusterurl/24/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:07:41] "[37mGET /getClusterData/2020-05-02/2020-05-28/24 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:07:57] "[37mGET /getAllClusterDataOfRank/2020-05-02 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:08:10] "[37mGET /getAllClusterDataOfRank/2020-05-02 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:08:19] "[37mGET /getAllClusterDataOfSize/2020-05-02 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:08:37] "[37mGET /myntra/1 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:08:45] "[37mGET /myntra.com/1 HTTP/1.1[0m" 200 -
+  0%|          | 0/387776 [00:00<?, ?it/s]  3%|▎         | 11421/387776 [00:00<00:03, 114201.94it/s]  6%|▌         | 23166/387776 [00:00<00:03, 115155.35it/s]  9%|▉         | 35177/387776 [00:00<00:03, 116598.24it/s] 12%|█▏        | 47503/387776 [00:00<00:02, 118518.80it/s] 15%|█▌        | 60063/387776 [00:00<00:02, 120556.01it/s] 19%|█▉        | 72794/387776 [00:00<00:02, 122503.00it/s] 22%|██▏       | 85452/387776 [00:00<00:02, 123695.43it/s] 25%|██▌       | 97987/387776 [00:00<00:02, 124184.07it/s] 29%|██▊       | 110917/387776 [00:00<00:02, 125673.24it/s] 32%|███▏      | 124003/387776 [00:01<00:02, 127185.26it/s] 35%|███▌      | 136630/387776 [00:01<00:01, 126908.87it/s] 39%|███▊      | 149742/387776 [00:01<00:01, 128142.58it/s] 42%|████▏     | 162886/387776 [00:01<00:01, 129112.53it/s] 45%|████▌     | 176071/387776 [00:01<00:01, 129918.68it/s] 49%|████▊     | 188993/387776 [00:01<00:01, 127707.31it/s] 52%|█████▏    | 202112/387776 [00:01<00:01, 128730.32it/s] 55%|█████▌    | 215211/387776 [00:01<00:01, 129399.85it/s] 59%|█████▉    | 228264/387776 [00:01<00:01, 129733.55it/s] 62%|██████▏   | 241618/387776 [00:01<00:01, 130849.33it/s] 66%|██████▌   | 254858/387776 [00:02<00:01, 131309.53it/s] 69%|██████▉   | 268039/387776 [00:02<00:00, 131457.81it/s] 73%|███████▎  | 281468/387776 [00:02<00:00, 132292.83it/s] 76%|███████▌  | 294697/387776 [00:02<00:00, 132075.40it/s] 79%|███████▉  | 307905/387776 [00:02<00:00, 131803.43it/s] 83%|████████▎ | 321321/387776 [00:02<00:00, 132498.89it/s] 86%|████████▋ | 334572/387776 [00:02<00:00, 131459.38it/s] 90%|████████▉ | 347721/387776 [00:02<00:00, 131068.18it/s] 93%|█████████▎| 360830/387776 [00:02<00:00, 126468.66it/s] 96%|█████████▋| 373700/387776 [00:02<00:00, 127126.88it/s]100%|█████████▉| 386948/387776 [00:03<00:00, 128685.08it/s]100%|██████████| 387776/387776 [00:03<00:00, 128012.76it/s]
+  0%|          | 0/200000 [00:00<?, ?it/s]  3%|▎         | 6587/200000 [00:00<00:02, 65861.74it/s]  7%|▋         | 13298/200000 [00:00<00:02, 66230.17it/s] 10%|█         | 20089/200000 [00:00<00:02, 66722.53it/s] 13%|█▎        | 26714/200000 [00:00<00:02, 66577.55it/s] 17%|█▋        | 33532/200000 [00:00<00:02, 67047.88it/s] 20%|██        | 40460/200000 [00:00<00:02, 67702.19it/s] 24%|██▎       | 47474/200000 [00:00<00:02, 68414.19it/s] 27%|██▋       | 54512/200000 [00:00<00:02, 68989.42it/s] 31%|███       | 61529/200000 [00:00<00:01, 69337.71it/s] 34%|███▍      | 68530/200000 [00:01<00:01, 69535.78it/s] 38%|███▊      | 75576/200000 [00:01<00:01, 69808.98it/s] 41%|████▏     | 82637/200000 [00:01<00:01, 70044.61it/s] 45%|████▍     | 89717/200000 [00:01<00:01, 70267.40it/s] 48%|████▊     | 96837/200000 [00:01<00:01, 70542.28it/s] 52%|█████▏    | 103927/200000 [00:01<00:01, 70648.33it/s] 56%|█████▌    | 111039/200000 [00:01<00:01, 70787.73it/s] 59%|█████▉    | 118124/200000 [00:01<00:01, 70804.34it/s] 63%|██████▎   | 125249/200000 [00:01<00:01, 70934.95it/s] 66%|██████▌   | 132333/200000 [00:01<00:00, 70668.32it/s] 70%|██████▉   | 139399/200000 [00:02<00:00, 70663.21it/s] 73%|███████▎  | 146461/200000 [00:02<00:00, 70575.82it/s] 77%|███████▋  | 153541/200000 [00:02<00:00, 70642.59it/s] 80%|████████  | 160603/200000 [00:02<00:00, 70319.80it/s] 84%|████████▍ | 167652/200000 [00:02<00:00, 70370.59it/s] 87%|████████▋ | 174689/200000 [00:02<00:00, 70015.32it/s] 91%|█████████ | 181696/200000 [00:02<00:00, 70028.93it/s] 94%|█████████▍| 188699/200000 [00:02<00:00, 69721.39it/s] 98%|█████████▊| 195672/200000 [00:02<00:00, 69707.04it/s]100%|██████████| 200000/200000 [00:02<00:00, 69718.84it/s]
+  0%|          | 0/437 [00:00<?, ?it/s]loading database updates...
+loading word vectors...
+This will update database using cisco ranklist of 2020-05-10
+Fetching cisco ranklist...
+Filtering cisco ranklist...
+Filtering Already visited domains...
+
+ 52419 new domains found
+
+Scrapping urls...
+scrapping will be done in 437 phase  where 120 urls attempt in each phase
+  0%|          | 1/437 [00:26<3:09:44, 26.11s/it]  0%|          | 2/437 [00:48<3:01:44, 25.07s/it]initializing...
+loading database updates...
+loading kmeans..
+loading word vectors...
+Traceback (most recent call last):
+  File "app.py", line 19, in <module>
+    from webtools.search import search_by_domain, search_by_query
+  File "/home/ec2-user/webcat/webtools/search.py", line 3, in <module>
+    from webutils.processdata import average_word_embedding
+  File "/home/ec2-user/webcat/webutils/processdata.py", line 6, in <module>
+    from nltk import FreqDist
+ModuleNotFoundError: No module named 'nltk'
+initializing...
+loading database updates...
+loading kmeans..
+loading word vectors...
+READY
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+initializing...
+loading database updates...
+loading kmeans..
+loading word vectors...
+READY
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+27.56.245.116 - - [28/May/2020 06:20:04] "[37mGET / HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 06:20:07] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:03:36] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:04:45] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:05:33] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:05:45] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:07:45] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:07:57] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:08:22] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:08:36] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:10:13] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:10:27] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:10:40] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:10:53] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:11:12] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:13:29] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:14:49] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:16:42] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:17:24] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:24:53] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:26:45] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:27:06] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:31:05] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:32:25] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:33:39] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:34:07] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:34:18] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:34:48] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:37:28] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:38:50] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:39:01] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:40:16] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:40:47] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:41:14] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:41:52] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:41:57] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:42:04] "[37mGET /getAllClusterDataOfSize/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:42:14] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:42:32] "[37mGET /getAllClusterDataOfSize/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:43:02] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:43:20] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:43:38] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:44:16] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:44:29] "[37mGET /getAllClusterDataOfSize/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:44:39] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:48:18] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:48:21] "[37mGET /getOneDayClusterData/2020-05-28/92 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:48:24] "[37mGET /getclusterurl/92/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:49:16] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:49:26] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 08:51:48] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+initializing...
+loading database updates...
+loading kmeans..
+loading word vectors...
+READY
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+27.56.245.116 - - [28/May/2020 09:42:28] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:42:33] "[37mGET /getOneDayClusterData/2020-05-28/8 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:42:33] "[37mGET /getclusterurl/8/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:42:37] "[37mGET /getOneDayClusterData/2020-05-10/8 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:42:51] "[37mGET /getOneDayClusterData/2020-05-07/23 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:42:54] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:42:57] "[37mGET /getOneDayClusterData/2020-05-10/23 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:42:59] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:43:13] "[37mGET /getClusterData/2020-04-05/2020-05-12/23 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:43:14] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:43:24] "[37mGET /getClusterData/2020-05-05/2020-05-12/23 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:43:26] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:43:41] "[37mGET /getOneDayClusterData/2020-05-10/23 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:43:41] "[37mGET /getclusterurl/23/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:43:45] "[37mGET /getOneDayClusterData/2020-05-10/24 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:43:45] "[37mGET /getclusterurl/24/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:44:01] "[37mGET /getClusterData/2020-05-05/2020-05-12/24 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:44:02] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 09:45:14] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 09:46:11] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 09:47:15] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 09:47:29] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 09:49:01] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+185.202.2.149 - - [28/May/2020 09:51:29] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+185.202.2.149 - - [28/May/2020 09:51:29] "[35m[1m  /*à     Cookie: mstshash=Administr[0m" HTTPStatus.BAD_REQUEST -
+122.175.147.18 - - [28/May/2020 09:51:32] "[37mGET /nike.com/1 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 09:52:01] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 09:53:12] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 09:53:17] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 09:53:17] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 09:57:27] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:58:50] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:58:54] "[37mGET /getOneDayClusterData/2020-05-28/12 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:58:54] "[37mGET /getclusterurl/12/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:58:55] "[37mGET /getOneDayClusterData/2020-05-28/13 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:58:55] "[37mGET /getclusterurl/13/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:59:15] "[37mGET /getOneDayClusterData/2020-05-28/68 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:59:15] "[37mGET /getclusterurl/68/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:59:18] "[37mGET /getOneDayClusterData/2020-05-28/67 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:59:18] "[37mGET /getclusterurl/67/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:59:40] "[37mGET /getOneDayClusterData/2020-05-28/69 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:59:40] "[37mGET /getclusterurl/69/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:59:44] "[37mGET /getOneDayClusterData/2020-05-28/68 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 09:59:44] "[37mGET /getclusterurl/68/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 10:22:00] "[37mGET /getAllClusterDataOfSize/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 10:22:02] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 10:25:13] "[37mGET /getclusterurl/1/page/1 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 10:25:14] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 10:32:08] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 10:32:18] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 10:33:51] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 10:33:55] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 10:34:13] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 10:34:49] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 10:35:16] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:03:00] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:03:09] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:03:11] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:05:36] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:07:28] "[37mGET /getAllClusterDataOfRank/2020-05-02 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:07:29] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:10:04] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:10:30] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:12:44] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:13:44] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:14:31] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:16:17] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:16:52] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:17:23] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:18:24] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:18:53] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:18:56] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:18:58] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:19:56] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:20:27] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:21:00] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:22:48] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:22:48] "[37mGET /getAllClusterDataOf/Rank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:23:37] "[37mGET /getAllClusterDataOf/Rank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:23:37] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:24:32] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:24:32] "[37mGET /getAllClusterDataOfRank/2020-05-02 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:24:51] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:24:51] "[37mGET /getAllClusterDataOf/Rank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:25:02] "[37mGET /getAllClusterDataOf/Rank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:25:02] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:25:17] "[32mGET /getAllClusterDataOfRank//2020-05-09 HTTP/1.1[0m" 308 -
+122.175.147.18 - - [28/May/2020 11:25:17] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:25:18] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:25:55] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:25:55] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:26:47] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:26:47] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:28:15] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:28:15] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:30:11] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:30:16] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:30:16] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:30:30] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:30:30] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:31:13] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:31:13] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:32:15] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:32:15] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:33:47] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:33:47] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:34:18] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:34:18] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:35:15] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:35:15] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:35:34] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:35:34] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:35:46] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:35:46] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:40:51] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:40:51] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:42:31] "[37mGET /getAllClusterDataOfRank/2020-05-02 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:42:32] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:44:23] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:44:23] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:47:33] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:47:33] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:48:35] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:48:36] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
