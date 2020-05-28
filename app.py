@@ -16,7 +16,7 @@ import json
 import os
 from webdata.trendsdata import get_all_info, cluster_info_bw_date,allClusterData,keywords_by_cluster
 from webdata.globaldata import get_cluster_websites,site_info_by_cluster
-from webtools.search import search_by_domain, search_by_query
+from webtools.search import search_by_domain, search_by_query,update_cluster_name
 from webtools.processurl import get_processed_info
 from settings import *
 from webtools import kmeans
@@ -144,7 +144,7 @@ def getAllClusterDataOfRank(Date):
 @app.route('/updateClusterName/<int:cluster>/<name>')
 def updateClusterName(cluster,name):
     update_cluster_name(cluster,name)
-    return "SUCCESS"
+    return "SUCCESSFULLY ADDED NEW RECORDS"
 
 if __name__ == '__main__':
     app.run(host= '0.0.0.0',use_reloader=False,debug=True)
