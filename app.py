@@ -122,7 +122,7 @@ def getClusterInfo(cluster_no):
     sites = sorted([(norm(row[1]-centroids[cluster_no-1]), row[0], row[3] if row[3] != -1 else DB_DEFAULT_RANK) for row in site_info_by_cluster(cluster_no)], key=lambda x: x[0])
     final= sorted([{'url': v[1], 'rank': v[2]} for v in sites[:10]], key=lambda x: x['rank'])
     only_urls=[ dict['url'] for dict in final ] 
-    return json.dumps(keywords,only_urls)
+    return {'keywords':keywords,'urls':only_urls}
   except sqlite3.Error as error:
     print('error fetching data from site_info', error)
     return json.dumps([])
