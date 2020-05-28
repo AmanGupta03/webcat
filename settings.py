@@ -10,7 +10,7 @@ import sqlite3
 
 DB_PATH = './database/web.db'
 KMEANS_PATH = './dump_obj/kmeans'
-
+tempClusterNameDb = './database/tempclustername.db'
 def get_last_update_date():
   """ return string consist date upto which database is updated """
   
