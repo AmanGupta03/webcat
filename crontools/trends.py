@@ -46,7 +46,11 @@ def update_trends(urls, X, date):
 
   cluster_no = []
 
-  kmeans.partial_fit(X)
+  try:
+    kmeans.partial_fit(X)
+  except Exception as e:
+    print(e)
+
   cluster_no= kmeans.labels_
   centroids = kmeans.cluster_centers_
   
