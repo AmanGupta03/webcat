@@ -140,7 +140,11 @@ def getAllClusterDataOfSize(Date):
 @app.route('/getAllClusterDataOfRank/<Date>')
 def getAllClusterDataOfRank(Date):
     return json.dumps(allClusterData(Date,'RANK'))
-  
+ 
+@app.route('/updateClusterName/<int:cluster>/<name>')
+def updateClusterName(cluster,name):
+    update_cluster_name(cluster,name)
+    return "SUCCESS"
 
 if __name__ == '__main__':
     app.run(host= '0.0.0.0',use_reloader=False,debug=True)
