@@ -106,14 +106,16 @@ def allClusterData(endDate,tableName):
 #     cur = conn.cursor()
     cursor1 = conn.execute("SELECT * from "+str(tableName)+" where date_p between ? and ?",(strDate,endDate))
     cursor2 = conn.execute("SELECT * from size where date_p between ? and ?",(strDate,endDate))
+    cursor3 = conn.execute("SELECT * from cluster_name")
+    cluster_name=cursor3.fetchall()
     sizes_to_average=cursor2.fetchall()
     rows=cursor1.fetchall()
     dataList=[]
     for i in range(1,101):
       if(tableName=='RANK'):
-        dataList.append({'date':endDate,'size':sizes_to_average[1][i],'size_change':sizes_to_average[1][i]-sizes_to_average[0][i],'cluster_no':i,'cluster_name':i,'primary':int(rows[1][i]/sizes_to_average[1][i]),'secondary':int((rows[1][i]/sizes_to_average[1][i])-(rows[0][i]/sizes_to_average[0][i]))})
+        dataList.append({'date':endDate,'size':sizes_to_average[1][i],'size_change':sizes_to_average[1][i]-sizes_to_average[0][i],'cluster_no':i,'cluster_name':cluster_name[i-1][1],'primary':int(rows[1][i]/sizes_to_average[1][i]),'secondary':int((rows[1][i]/sizes_to_average[1][i])-(rows[0][i]/sizes_to_average[0][i]))})
       else:
-        dataList.append({'date':endDate,'cluster_no':i,'cluster_name':i,'primary':rows[1][i],'secondary':rows[1][i]-rows[0][i]})
+        dataList.append({'date':endDate,'cluster_no':i,'cluster_name':cluster_name[i-1][1],'primary':rows[1][i],'secondary':rows[1][i]-rows[0][i]})
     return dataList  
   except Exception as e:
     print('error fetching data from rank table', e)
