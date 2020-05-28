@@ -19,6 +19,8 @@ from webdata.globaldata import get_cluster_websites,site_info_by_cluster
 from webtools.search import search_by_domain, search_by_query
 from webtools.processurl import get_processed_info
 from settings import *
+from webtools import kmeans
+from numpy.linalg import norm
 
 app = Flask(__name__)
 cors = CORS(app)
