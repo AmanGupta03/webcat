@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 from numpy.linalg import norm
 from webtools import *
 import sqlite3
-from setting import CLUSTERNAME_DB
+from settings import CLUSTERNAME_DB
 
 def search_by_query(query, cluster=-1, result=20, limit=100000): 
   """ return *result* site based on search query from *cluster*, sorted according to rank  """ 
