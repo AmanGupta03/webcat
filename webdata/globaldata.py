@@ -96,19 +96,6 @@ def top_keywords(urls, count=10):
   except:
     print('Error finding top keywords')
 
-
-def get_near_websites(cluster_no):
-  try:
-     conn = sqlite3.connect(DB_PATH)
-     cur = conn.cursor()
-
-     centroids = kmeans.cluster_centers_
-     query='SELECT siteinfo.url from siteinfo where cluster=? ORDER BY rank DESC LIMIT 10'
-
-
-
-
-
 def get_cluster_websites(page=0, cluster_no=-1, limit=10):
   """ return dictionary consist *sites* i.e list of dictionary with fields (url, rank, change, approx) from globaldata of *cluster*
       and  *max_page*   
