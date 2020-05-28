@@ -1,0 +1,130 @@
+initializing...
+Traceback (most recent call last):
+  File "app.py", line 10, in <module>
+    from flask import Flask
+ImportError: No module named flask
+initializing...
+loading database updates...
+loading kmeans..
+loading word vectors...
+READY
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+/home/ec2-user/webcat/venv/lib64/python3.7/site-packages/sklearn/base.py:334: UserWarning: Trying to unpickle estimator MiniBatchKMeans from version 0.23.0 when using version 0.23.1. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+initializing...
+loading database updates...
+loading kmeans..
+loading word vectors...
+READY
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+/home/ec2-user/webcat/venv/lib64/python3.7/site-packages/sklearn/base.py:334: UserWarning: Trying to unpickle estimator MiniBatchKMeans from version 0.23.0 when using version 0.23.1. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+27.56.211.32 - - [27/May/2020 17:26:22] "[37mGET / HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:26:25] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:26:41] "[37mGET /getOneDayClusterData/2020-05-02/68 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:26:41] "[37mGET /getclusterurl/68/page/0 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:26:49] "[37mGET /getOneDayClusterData/2020-05-02/86 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:26:49] "[37mGET /getclusterurl/86/page/0 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:27:02] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:27:49] "[37mGET /getAllClusterDataOfRank/2020-05-02 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:27:58] "[37mGET /getAllClusterDataOfSize/2020-05-02 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:28:18] "[37mGET /msg91.com/1 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:29:11] "[37mGET /http://www.sports.dauniv.ac.in/1 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:31:18] "[37mGET /http://www.sports.dauniv.ac.in/1 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:31:31] "[37mGET /http://www.sports.dauniv.ac.in/1 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:31:49] "[37mGET /http://www.sports.dauniv.ac.in/1 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:35:21] "[37mGET /http://www.sports.dauniv.ac.in/1 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:35:25] "[37mGET /http://www.sports.dauniv.ac.in/1 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:35:29] "[37mGET /http://www.sports.dauniv.ac.in/1 HTTP/1.1[0m" 200 -
+initializing...
+Traceback (most recent call last):
+  File "app.py", line 10, in <module>
+    from flask import Flask
+ImportError: No module named flask
+initializing...
+loading database updates...
+loading kmeans..
+loading word vectors...
+Traceback (most recent call last):
+  File "app.py", line 19, in <module>
+    from webtools.search import search_by_domain, search_by_query
+  File "/home/ec2-user/webcat/webtools/search.py", line 3, in <module>
+    from webutils.processdata import average_word_embedding
+  File "/home/ec2-user/webcat/webutils/processdata.py", line 6, in <module>
+    from nltk import FreqDist
+ModuleNotFoundError: No module named 'nltk'
+initializing...
+loading database updates...
+loading kmeans..
+loading word vectors...
+READY
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+/home/ec2-user/webcat/venv/lib64/python3.7/site-packages/sklearn/base.py:334: UserWarning: Trying to unpickle estimator MiniBatchKMeans from version 0.23.0 when using version 0.23.1. This might lead to breaking code or invalid results. Use at your own risk.
+  UserWarning)
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+27.56.211.32 - - [27/May/2020 17:38:56] "[37mGET /http://www.sports.dauniv.ac.in/1 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:39:16] "[37mGET /getOneDayClusterData/2020-05-27/91 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:39:16] "[37mGET /getclusterurl/91/page/0 HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:39:18] "[37mGET /http://www.sports.dauniv.ac.in/1 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:39:18] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:39:23] "[37mGET /getAllClusterDataOfRank/2020-05-02 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:39:30] "[37mGET /getAllClusterDataOfSize/2020-05-02 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:39:32] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:39:57] "[37mGET /getOneDayClusterData/2020-05-27/34 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:39:58] "[37mGET /getclusterurl/34/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:40:03] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:40:16] "[37mGET /getOneDayClusterData/2020-05-27/62 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:40:16] "[37mGET /getclusterurl/62/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:40:18] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:40:31] "[37mGET /getOneDayClusterData/2020-05-27/86 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:40:31] "[37mGET /getclusterurl/86/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:43:10] "[37mGET /getOneDayClusterData/2020-05-27/88 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:43:11] "[37mGET /getclusterurl/88/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:43:12] "[37mGET /getclusterurl/88/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:43:18] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:43:18] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:43:25] "[37mGET /search/query/google HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:43:27] "[37mGET /search/query/google HTTP/1.1[0m" 200 -
+27.56.211.32 - - [27/May/2020 17:43:28] "[37mGET /http://www.sports.dauniv.ac.in/1 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:43:33] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:43:33] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:43:40] "[37mGET /search/query/amazon HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:43:42] "[37mGET /search/query/amazon HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:43:55] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:43:55] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:43:58] "[37mGET /search/query/bank HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:44:01] "[37mGET /search/query/bank HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:44:26] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:44:27] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:44:35] "[37mGET /search/query/amazon HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:44:38] "[37mGET /search/query/amazon HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:44:56] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:44:56] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:44:59] "[37mGET /search/query/google HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:45:01] "[37mGET /search/query/google HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:45:17] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:45:17] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:45:23] "[37mGET /search/query/travel HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:45:24] "[37mGET /search/query/travel HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:45:30] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:45:31] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:45:37] "[37mGET /search/query/university HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:45:39] "[37mGET /search/query/university HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:46:07] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:46:07] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:46:25] "[37mGET /getclusterurl/page/2 HTTP/1.1[0m" 200 -
+110.224.216.26 - - [27/May/2020 17:46:30] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -

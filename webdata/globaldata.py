@@ -16,8 +16,7 @@ def site_info_by_cluster(cluster_no=-1, limit=None):
       Note-: support cluster_no as list of integers, in this case it yield info for all 
       cluster belongs to that list 
       
-  """
-  
+  """ 
   try:
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
@@ -97,7 +96,6 @@ def top_keywords(urls, count=10):
   except:
     print('Error finding top keywords')
 
-
 def get_cluster_websites(page=0, cluster_no=-1, limit=10):
   """ return dictionary consist *sites* i.e list of dictionary with fields (url, rank, change, approx) from globaldata of *cluster*
       and  *max_page*   
@@ -117,7 +115,7 @@ def get_cluster_websites(page=0, cluster_no=-1, limit=10):
 
     #make query string
     offset = page*limit
-    query = 'SELECT siteinfo.url, rank, rank_d29 from siteinfo INNER JOIN sitedata on siteinfo.url = sitedata.url'
+    query = 'SELECT siteinfo.url, rank, rank_d29,cluster from siteinfo INNER JOIN sitedata on siteinfo.url = sitedata.url'
     if cluster_no != -1: query += ' WHERE cluster = ' + str(cluster_no)
     query += ' LIMIT ' + str(offset) + ',' + str(limit)
 
@@ -130,7 +128,7 @@ def get_cluster_websites(page=0, cluster_no=-1, limit=10):
     #check whether change is approximate or not
     approx = lambda x, y: 1 if (x == -1 or y == -1) else 0
 
-    get_info = lambda x: {'url': x[0], 'rank': rank(x[1]), 'change': change(x[1], x[2]), 'approx': approx(x[1], x[2])} 
+    get_info = lambda x: {'url': x[0], 'rank': rank(x[1]), 'change': change(x[1], x[2]), 'approx': approx(x[1], x[2]),'cluster': x[3]} 
     sites =  [get_info(x) for x in cur.execute(query).fetchall()]
     return {'sites': sites, 'max_page':max_page}
 

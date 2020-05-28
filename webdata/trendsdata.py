@@ -96,3 +96,25 @@ def cluster_info_bw_date(cluster=0, start=DB_FIRST_DATE, end=DB_DATE):
   except Exception as e:
     print('error in cluster_info_bw_date', e)
     return []
+  
+def allClusterData(endDate,tableName):
+  try:
+    str_to_date = lambda s: date(int(s[0:4]),int(s[5:7]),int(s[8:10]))
+    strDate=str(str_to_date(endDate)-timedelta(days=1))
+    if(strDate<DB_FIRST_DATE or endDate>DB_DATE): return [] 
+    conn = sqlite3.connect(DB_PATH)
+#     cur = conn.cursor()
+    cursor1 = conn.execute("SELECT * from "+str(tableName)+" where date_p between ? and ?",(strDate,endDate))
+    cursor2 = conn.execute("SELECT * from size where date_p between ? and ?",(strDate,endDate))
+    sizes_to_average=cursor2.fetchall()
+    rows=cursor1.fetchall()
+    dataList=[]
+    for i in range(1,101):
+      if(tableName=='RANK'):
+        dataList.append({'date':endDate,'size':sizes_to_average[1][i],'size_change':sizes_to_average[1][i]-sizes_to_average[0][i],'cluster_no':i,'cluster_name':i,'primary':int(rows[1][i]/sizes_to_average[1][i]),'secondary':int((rows[1][i]/sizes_to_average[1][i])-(rows[0][i]/sizes_to_average[0][i]))})
+      else:
+        dataList.append({'date':endDate,'cluster_no':i,'cluster_name':i,'primary':rows[1][i],'secondary':rows[1][i]-rows[0][i]})
+    return dataList  
+  except Exception as e:
+    print('error fetching data from rank table', e)
+    return []

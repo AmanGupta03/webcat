@@ -10,7 +10,7 @@ import sqlite3
 
 DB_PATH = './database/web.db'
 KMEANS_PATH = './dump_obj/kmeans'
-
+CLUSTERNAME_DB = './database/tempclustername.db'
 def get_last_update_date():
   """ return string consist date upto which database is updated """
   
@@ -50,7 +50,8 @@ CRON_SETTINGS = {
   'MAX_WAIT_FOR_RESPONSE': 5, #url will be rejected if it send nothing for this much seconds
   'LIMIT': 150000, # First $LIMIT entries will be consider from filtered cisco-ranklist
   'TEMP_DB_PATH': './database/temp.db',  #to use only during cron-job
-  'WORKERS': 50,  #no of workers in multiprocessing
-  'BATCH_SIZE': 200,  #no of urls attempt in one go.
+  'WORKERS': 40,  #no of workers in multiprocessing
+  'BATCH_SIZE': 160,  #no of urls attempt in one go.
   'BLACKLIST_TIME':4 #no of days a url will go in blacklist if it doesn't respond
+
 }
