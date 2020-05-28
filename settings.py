@@ -10,7 +10,7 @@ import sqlite3
 
 DB_PATH = './database/web.db'
 KMEANS_PATH = './dump_obj/kmeans'
-
+CLUSTERNAME_DB = './database/tempclustername.db'
 def get_last_update_date():
   """ return string consist date upto which database is updated """
   
@@ -28,7 +28,7 @@ def get_last_update_date():
 DB_DATE = get_last_update_date()
 
 #default rank
-DB_DEFAULT_RANK = 200000  
+DB_DEFAULT_RANK = 150000  
 
 #sitedata consist only site that  found in last *WINDOW* days
 WINDOW = 30
@@ -48,8 +48,10 @@ CRON_SETTINGS = {
   'TIMEOUT_SCRAPPER': 30, #max time in second scrapper wait for one url
   'TIMEOUT_STATUS_CHECK': 10, #max time in second status checker wait for one url
   'MAX_WAIT_FOR_RESPONSE': 5, #url will be rejected if it send nothing for this much seconds
-  'LIMIT': 200000, # First $LIMIT entries will be consider from filtered cisco-ranklist
+  'LIMIT': 150000, # First $LIMIT entries will be consider from filtered cisco-ranklist
   'TEMP_DB_PATH': './database/temp.db',  #to use only during cron-job
-  'WORKERS': 45,  #no of workers in multiprocessing
-  'BATCH_SIZE': 180,  #no of urls attempt in one go.
+  'WORKERS': 50,  #no of workers in multiprocessing
+  'BATCH_SIZE': 200,  #no of urls attempt in one go.
+  'BLACKLIST_TIME':4 #no of days a url will go in blacklist if it doesn't respond
+
 }

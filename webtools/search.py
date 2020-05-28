@@ -5,7 +5,8 @@ from webdata.globaldata import site_info_by_cluster
 from urllib.parse import urlparse
 from numpy.linalg import norm
 from webtools import *
-
+import sqlite3
+from settings import CLUSTERNAME_DB
 
 def search_by_query(query, cluster=-1, result=20, limit=100000): 
   """ return *result* site based on search query from *cluster*, sorted according to rank  """ 
@@ -26,3 +27,14 @@ def search_by_domain(query, cluster=-1, results=50, limit=100000):
         domains.append({'url':row[0], 'rank':row[3] if row[3] !=- 1 else DB_DEFAULT_RANK})
   domains.sort(key=lambda x: x['rank'])
   return domains[0:results]
+
+
+def update_cluster_name(cluster,name):
+  try:
+        conn = sqlite3.connect(CLUSTERNAME_DB) 
+        cur = conn.cursor()
+        cur.execute("UPDATE cluster_name set name=? where cluster=?",(name,cluster))
+        conn.commit()
+        conn.close()
+  except:
+        print("Error in connecting to database")
