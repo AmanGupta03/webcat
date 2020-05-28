@@ -122,7 +122,6 @@ def getOneDayClusterData(endDate,cluster_no):
 def getClusterInfo(cluster_no):
   try:
     keywords=keywords_by_cluster(cluster_no)
-    kmeans=load_obj(KMEANS_PATH)
     centroids = kmeans.cluster_centers_
     sites = sorted([(norm(row[1]-centroids[cluster_no-1]), row[0], row[3] if row[3] != -1 else DB_DEFAULT_RANK) for row in site_info_by_cluster(cluster_no)], key=lambda x: x[0])
     final= sorted([{'url': v[1], 'rank': v[2]} for v in sites[:10]], key=lambda x: x['rank'])
