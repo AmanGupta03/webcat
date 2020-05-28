@@ -117,7 +117,7 @@ def getOneDayClusterData(endDate,cluster_no):
     print("Error with one date Cluster Data api ",e)
     return json.dumps([])
 
-@app.roue('/getClusterInfo/<int:cluster_no>')
+@app.route('/getClusterInfo/<int:cluster_no>')
 @cross_origin()
 def getClusterInfo(cluster_no):
   try:
