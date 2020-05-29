@@ -9,3 +9,4 @@ flask_cors
 gdown
 nltk
 pandas
+textblob
