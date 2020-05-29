@@ -121,6 +121,7 @@ def getOneDayClusterData(endDate,cluster_no):
 @cross_origin()
 def getClusterInfo(cluster_no):
   try:
+    cluster_no-=1 # beacuse from front end it consider clusterno (1-100)but in db(0-99)
     keywords=keywords_by_cluster(cluster_no)
     centroids = kmeans.cluster_centers_
     sites = sorted([(norm(row[1]-centroids[cluster_no-1]), row[0], row[3] if row[3] != -1 else DB_DEFAULT_RANK) for row in site_info_by_cluster(cluster_no)], key=lambda x: x[0])
