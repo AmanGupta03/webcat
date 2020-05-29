@@ -123,15 +123,15 @@ def allClusterData(endDate,tableName):
     print('error fetching data from rank table', e)
     return []
 
-  def allClusterData1(endDate, strDate="false"):
+def allClusterData1(endDate, strDate="false"):
   try:
     if(strDate=="false"):
       str_to_date = lambda s: date(int(s[0:4]),int(s[5:7]),int(s[8:10]))
       strDate=str(str_to_date(endDate)-timedelta(days=1))
     if(strDate<DB_FIRST_DATE or strDate>DB_DATE or endDate>DB_DATE or endDate<DB_FIRST_DATE): return [] 
     conn = sqlite3.connect(DB_PATH)
-    cursor1 = conn.execute("SELECT * from "+str(tableName)+" where date_p=? or date_p=?",(strDate,endDate))
-    cursor2 = conn.execute("SELECT * from size where date_p between ? and ?",(strDate,endDate))
+    cursor1 = conn.execute("SELECT * from rank where date_p=? or date_p=?",(strDate,endDate))
+    cursor2 = conn.execute("SELECT * from size where date_p=? or date_p=?",(strDate,endDate))
     cursor3 = conn.execute("SELECT * from cluster_name")
     cluster_name=cursor3.fetchall()
     sizes_to_average=cursor2.fetchall()
