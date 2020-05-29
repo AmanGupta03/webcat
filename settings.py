@@ -50,8 +50,8 @@ CRON_SETTINGS = {
   'MAX_WAIT_FOR_RESPONSE': 5, #url will be rejected if it send nothing for this much seconds
   'LIMIT': 150000, # First $LIMIT entries will be consider from filtered cisco-ranklist
   'TEMP_DB_PATH': './database/temp.db',  #to use only during cron-job
-  'WORKERS': 40,  #no of workers in multiprocessing
-  'BATCH_SIZE': 160,  #no of urls attempt in one go.
+  'WORKERS': 30,  #no of workers in multiprocessing
+  'BATCH_SIZE': 90,  #no of urls attempt in one go.
   'BLACKLIST_TIME':4 #no of days a url will go in blacklist if it doesn't respond
 
 }

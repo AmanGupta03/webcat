@@ -371,3 +371,187 @@ READY
 122.175.147.18 - - [28/May/2020 11:47:33] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
 122.175.147.18 - - [28/May/2020 11:48:35] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
 122.175.147.18 - - [28/May/2020 11:48:36] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:53:13] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:53:13] "[32mGET /getAllClusterDataOfRank//2020-05-09 HTTP/1.1[0m" 308 -
+122.175.147.18 - - [28/May/2020 11:53:13] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:53:18] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:53:18] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 11:53:22] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:00:06] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:00:06] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:00:08] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:00:13] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+initializing...
+loading database updates...
+loading kmeans..
+loading word vectors...
+READY
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+27.56.245.116 - - [28/May/2020 12:33:19] "[37mGET /msg91.com/1 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:33:45] "[37mGET /getClusterData/2020-04-05/2020-05-07/23 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:33:47] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:33:55] "[37mGET /getClusterData/2020-04-05/2020-05-11/23 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:33:57] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:34:05] "[37mGET /getClusterData/2020-05-05/2020-05-11/23 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:34:06] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:34:28] "[37mGET /getclusterurl/2/page/1 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:34:29] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:34:38] "[37mGET /getclusterurl/2/page/2 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:34:40] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:34:48] "[37mGET /getclusterurl/2/page/13 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:34:50] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:34:56] "[37mGET /getclusterurl/2/page/12 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:34:58] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:35:12] "[37mGET /getclusterurl/2/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:35:13] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:35:19] "[37mGET /getclusterurl/2/page/12 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:35:21] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:35:46] "[37mGET /getclusterurl/page/2 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:35:48] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:35:53] "[37mGET /getclusterurl/page/1 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:35:55] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:35:59] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:36:00] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:36:39] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:36:43] "[32mGET /getAllClusterDataOfRank//2020-05-09 HTTP/1.1[0m" 308 -
+27.56.245.116 - - [28/May/2020 12:36:43] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:36:43] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:38:18] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:39:24] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:39:24] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:39:34] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:39:34] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 12:40:02] "[32mGET /getAllClusterDataOfRank//2020-05-09 HTTP/1.1[0m" 308 -
+49.36.48.129 - - [28/May/2020 12:40:03] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 12:40:03] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:40:45] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:40:45] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:40:46] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:40:56] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:40:57] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:41:14] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:41:18] "[37mGET /getOneDayClusterData/2020-05-28/73 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:41:19] "[37mGET /getclusterurl/73/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:41:27] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:41:27] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:44:02] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:44:04] "[37mGET /getOneDayClusterData/2020-05-28/11 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:44:04] "[37mGET /getclusterurl/11/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:44:24] "[37mGET /getOneDayClusterData/2020-05-07/23 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:44:27] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 12:46:48] "[37mGET /getClusterData/2020-05-02/2020-05-28/11 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:46:54] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:46:57] "[37mGET /getOneDayClusterData/2020-05-28/37 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:46:57] "[37mGET /getclusterurl/37/page/0 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 12:48:59] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:49:18] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 12:49:50] "[37mGET /getOneDayClusterData/2020-05-28/39 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 12:49:50] "[37mGET /getclusterurl/39/page/0 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 12:49:52] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:50:17] "[37mGET /getOneDayClusterData/2020-05-28/4 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:50:17] "[37mGET /getclusterurl/4/page/0 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 12:50:20] "[37mGET /getOneDayClusterData/2020-05-28/8 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 12:50:20] "[37mGET /getclusterurl/8/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:50:28] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 12:50:31] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 12:51:21] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:52:49] "[37mGET /getOneDayClusterData/2020-05-28/86 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:52:50] "[37mGET /getclusterurl/86/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:54:29] "[37mGET /getclusterurl/86/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:54:42] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:54:44] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:55:20] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:55:33] "[32mGET /getAllClusterDataOfRank//2020-05-09 HTTP/1.1[0m" 308 -
+122.175.147.18 - - [28/May/2020 12:55:33] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:55:34] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:59:14] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:59:19] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:59:19] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:59:24] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 12:59:24] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 13:03:34] "[32mGET /getAllClusterDataOfRank//2020-05-09 HTTP/1.1[0m" 308 -
+122.175.147.18 - - [28/May/2020 13:03:34] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 13:03:34] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 13:04:20] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 13:04:20] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 13:04:59] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 13:05:05] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 13:05:11] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 13:05:35] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+49.36.48.129 - - [28/May/2020 13:05:35] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 13:05:37] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 13:05:38] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 13:05:40] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+83.97.20.189 - - [28/May/2020 13:24:56] code 400, message Bad HTTP/0.9 request type ('\x00\x00\x00\x11\x00\x00\x01é\x00\x01\x00\x00\x00ÿÿÿÿ\x01\x00\x00\x00\x00\x00\x00\x00')
+83.97.20.189 - - [28/May/2020 13:24:56] "[35m[1m     é    ÿÿÿÿ          MyCustomAssembly   [0m" HTTPStatus.BAD_REQUEST -
+122.175.147.18 - - [28/May/2020 13:27:04] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 13:27:04] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 13:27:11] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 13:27:11] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 14:54:52] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 15:13:42] "[37mGET /getOneDayClusterData/2020-05-07/23 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 15:13:45] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 15:16:36] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 15:16:36] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 16:25:43] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 16:25:44] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 16:25:44] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 16:25:45] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 16:25:46] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 16:25:47] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 16:30:24] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 16:30:24] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 16:30:27] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 16:30:33] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+122.175.147.18 - - [28/May/2020 16:30:33] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 16:57:58] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 16:58:01] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 16:58:01] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 16:58:03] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 16:58:04] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 16:58:04] "[37mGET /getAllClusterDataOfRank/2020-05-09 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 16:58:09] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 17:21:08] "[37mGET /getClusterInfo/2 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 17:21:11] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 17:22:57] "[37mGET /getClusterInfo/as HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 17:22:58] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+54.158.58.129 - - [28/May/2020 17:23:16] "[37mGET /getClusterInfo/23 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 17:39:31] "[37mGET /getClusterInfo/2 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 17:39:34] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+3.80.51.214 - - [28/May/2020 17:54:02] "[37mGET /getClusterInfo/2 HTTP/1.1[0m" 200 -
+3.91.64.93 - - [28/May/2020 17:54:35] "[37mGET /getClusterInfo/2 HTTP/1.1[0m" 200 -
+3.80.51.214 - - [28/May/2020 17:55:19] "[37mGET /getClusterInfo/23 HTTP/1.1[0m" 200 -
+3.91.64.93 - - [28/May/2020 18:04:37] "[37mGET /getClusterInfo/1 HTTP/1.1[0m" 200 -
+3.80.51.214 - - [28/May/2020 18:08:20] "[37mGET /getClusterInfo/3 HTTP/1.1[0m" 200 -
+3.80.51.214 - - [28/May/2020 18:09:37] "[37mGET /getClusterInfo/3 HTTP/1.1[0m" 200 -
+3.80.51.214 - - [28/May/2020 18:11:16] "[37mGET /getClusterInfo/3 HTTP/1.1[0m" 200 -
+3.91.64.93 - - [28/May/2020 18:11:59] "[37mGET /getClusterInfo/3 HTTP/1.1[0m" 200 -
+3.91.64.93 - - [28/May/2020 18:12:51] "[37mGET /getClusterInfo/3 HTTP/1.1[0m" 200 -
+3.91.64.93 - - [28/May/2020 18:13:32] "[37mGET /getClusterInfo/3 HTTP/1.1[0m" 200 -
+3.80.51.214 - - [28/May/2020 18:20:00] "[37mGET /getClusterInfo/3 HTTP/1.1[0m" 200 -
+3.80.51.214 - - [28/May/2020 18:22:01] "[37mGET /getClusterInfo/3 HTTP/1.1[0m" 200 -
+3.91.64.93 - - [28/May/2020 18:24:18] "[37mGET /getClusterInfo/23 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 18:56:17] "[37mGET /getclusterurl/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 18:56:23] "[37mGET /getOneDayClusterData/2020-05-29/25 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 18:56:23] "[37mGET /getclusterurl/25/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 18:56:23] "[37mGET /getclusterurl/25/page/0 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 18:56:56] "[37mGET /getclusterurl/25/page/1 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 18:57:56] "[37mGET /getOneDayClusterData/2020-05-29/77 HTTP/1.1[0m" 200 -
+27.56.245.116 - - [28/May/2020 18:57:56] "[37mGET /getclusterurl/77/page/0 HTTP/1.1[0m" 200 -
+209.17.97.82 - - [28/May/2020 19:26:27] "[37mGET / HTTP/1.0[0m" 200 -
+initializing...
+loading database updates...
+loading kmeans..
+loading word vectors...
+READY
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
