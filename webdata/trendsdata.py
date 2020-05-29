@@ -115,7 +115,7 @@ def allClusterData(endDate,tableName):
     dataList=[]
     for i in range(1,101):
       if(tableName=='RANK'):
-        dataList.append({'date':endDate,'size':sizes_to_average[1][i],'size_change':sizes_to_average[1][i]-sizes_to_average[0][i],'cluster_no':i,'cluster_name':cluster_name[i-1][1],'primary':int(rows[1][i]/sizes_to_average[1][i]),'secondary':int((rows[1][i]/sizes_to_average[1][i])-(rows[0][i]/sizes_to_average[0][i]))})
+        dataList.append({'date':endDate,'size':sizes_to_average[1][i],'size_change':sizes_to_average[1][i]-sizes_to_average[0][i],'cluster_no':i,'cluster_name':cluster_name[i-1][1],'primary':MAX_RANK-int(rows[1][i]/sizes_to_average[1][i]),'secondary':-1*int((rows[1][i]/sizes_to_average[1][i])-(rows[0][i]/sizes_to_average[0][i]))})
       else:
         dataList.append({'date':endDate,'cluster_no':i,'cluster_name':cluster_name[i-1][1],'primary':rows[1][i],'secondary':rows[1][i]-rows[0][i]})
     return dataList  
