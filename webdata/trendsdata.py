@@ -92,7 +92,7 @@ def cluster_info_bw_date(cluster=0, start=DB_FIRST_DATE, end=DB_DATE):
       if data['size'] > 0: rank =  data['rank'] // data['size']
       #res.append({'rank':rank, 'keywords':data['keywords'], 'size': data['size'], 'date':str(start)})
       #doing this becoz smaller rank is good then bigger rank so adjusitng rank score
-      res.append({'rank':500000-rank, 'keywords':data['keywords'], 'size': data['size'], 'date':str(start)})
+      res.append({'rank':MAX_RANK-rank, 'keywords':data['keywords'], 'size': data['size'], 'date':str(start)})
       start += timedelta(days=1)
     return res
   except Exception as e:

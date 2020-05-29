@@ -4,7 +4,7 @@ Note-: Changing setings can cause inconsistency in globaldata as well as trends 
 
 """
 
-__all__ = ['DB_PATH', 'DB_DATE', 'DB_DEFAULT_RANK', 'WINDOW', 'DB_FIRST_DATE', 'MAX_CLUSTER', 'MAX_WORDS']
+__all__ = ['DB_PATH', 'DB_DATE', 'DB_DEFAULT_RANK', 'WINDOW', 'DB_FIRST_DATE', 'MAX_CLUSTER', 'MAX_WORDS', 'MAX_RANK']
 
 import sqlite3
 
@@ -29,6 +29,9 @@ DB_DATE = get_last_update_date()
 
 #default rank
 DB_DEFAULT_RANK = 150000  
+
+#Max Rank of any website
+MAX_RANK=200000
 
 #sitedata consist only site that  found in last *WINDOW* days
 WINDOW = 30
