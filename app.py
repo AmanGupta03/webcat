@@ -14,7 +14,7 @@ from flask import Flask
 import urllib.parse
 import json
 import os
-from webdata.trendsdata import get_all_info, cluster_info_bw_date,allClusterData,keywords_by_cluster
+from webdata.trendsdata import get_all_info, cluster_info_bw_date,allClusterData,allClusterData1,keywords_by_cluster
 from webdata.globaldata import get_cluster_websites,site_info_by_cluster
 from webtools.search import search_by_domain, search_by_query,update_cluster_name
 from webtools.processurl import get_processed_info
@@ -121,6 +121,7 @@ def getOneDayClusterData(endDate,cluster_no):
 @cross_origin()
 def getClusterInfo(cluster_no):
   try:
+    cluster_no-=1 # beacuse from front end it consider clusterno (1-100)but in db(0-99)
     keywords=keywords_by_cluster(cluster_no)
     centroids = kmeans.cluster_centers_
     sites = sorted([(norm(row[1]-centroids[cluster_no-1]), row[0], row[3] if row[3] != -1 else DB_DEFAULT_RANK) for row in site_info_by_cluster(cluster_no)], key=lambda x: x[0])
@@ -139,7 +140,13 @@ def getAllClusterDataOfSize(Date):
 @app.route('/getAllClusterDataOfRank/<Date>')
 def getAllClusterDataOfRank(Date):
     return json.dumps(allClusterData(Date,'RANK'))
- 
+
+@app.route('/getAllClusterData/<strDate>/<endDate>')
+@app.route('/getAllClusterData/<endDate>')
+@cross_origin()
+def getAllClusterData(endDate,strDate="false"):
+    return json.dumps(allClusterData1(endDate,strDate))
+  
 @app.route('/updateClusterName/<int:cluster>/<name>')
 def updateClusterName(cluster,name):
     update_cluster_name(cluster,name)

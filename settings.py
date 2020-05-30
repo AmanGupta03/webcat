@@ -4,7 +4,7 @@ Note-: Changing setings can cause inconsistency in globaldata as well as trends 
 
 """
 
-__all__ = ['DB_PATH', 'DB_DATE', 'DB_DEFAULT_RANK', 'WINDOW', 'DB_FIRST_DATE', 'MAX_CLUSTER', 'MAX_WORDS']
+__all__ = ['DB_PATH', 'DB_DATE', 'DB_DEFAULT_RANK', 'WINDOW', 'DB_FIRST_DATE', 'MAX_CLUSTER', 'MAX_WORDS', 'MAX_RANK']
 
 import sqlite3
 
@@ -30,6 +30,9 @@ DB_DATE = get_last_update_date()
 #default rank
 DB_DEFAULT_RANK = 150000  
 
+#Max Rank of any website
+MAX_RANK=200000
+
 #sitedata consist only site that  found in last *WINDOW* days
 WINDOW = 30
 
@@ -50,8 +53,8 @@ CRON_SETTINGS = {
   'MAX_WAIT_FOR_RESPONSE': 5, #url will be rejected if it send nothing for this much seconds
   'LIMIT': 150000, # First $LIMIT entries will be consider from filtered cisco-ranklist
   'TEMP_DB_PATH': './database/temp.db',  #to use only during cron-job
-  'WORKERS': 40,  #no of workers in multiprocessing
-  'BATCH_SIZE': 160,  #no of urls attempt in one go.
+  'WORKERS': 30,  #no of workers in multiprocessing
+  'BATCH_SIZE': 90,  #no of urls attempt in one go.
   'BLACKLIST_TIME':4 #no of days a url will go in blacklist if it doesn't respond
 
 }

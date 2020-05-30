@@ -6,6 +6,7 @@ from crontools import trends
 from settings import *
 import numpy as np
 import sys
+import os
 
 LIMIT = CRON_SETTINGS['LIMIT']
 
@@ -87,8 +88,10 @@ def run(workers=None, batch_size=None):
       newdomains.temp_clear()
       urls, url_to_scrap = getting_update(cur_date, workers, batch_size)
       #SHUT DOWN SERVER HERE.....
+      os.system("./server_stop.sh")
       update(cur_date, urls, url_to_scrap)
       #RESTART SERVER HERE....
+      os.system("./server_start.sh")
       cur_date += timedelta(days=1)
     except Exception as e:
       print('Error while updating at', cur_date, e)

@@ -90,7 +90,9 @@ def cluster_info_bw_date(cluster=0, start=DB_FIRST_DATE, end=DB_DATE):
       data = cluster_all_info(cluster, start)
       rank = DB_DEFAULT_RANK
       if data['size'] > 0: rank =  data['rank'] // data['size']
-      res.append({'rank':rank, 'keywords':data['keywords'], 'size': data['size'], 'date':str(start)})
+      #res.append({'rank':rank, 'keywords':data['keywords'], 'size': data['size'], 'date':str(start)})
+      #doing this becoz smaller rank is good then bigger rank so adjusitng rank score
+      res.append({'rank':MAX_RANK-rank, 'keywords':data['keywords'], 'size': data['size'], 'date':str(start)})
       start += timedelta(days=1)
     return res
   except Exception as e:
@@ -106,14 +108,37 @@ def allClusterData(endDate,tableName):
 #     cur = conn.cursor()
     cursor1 = conn.execute("SELECT * from "+str(tableName)+" where date_p between ? and ?",(strDate,endDate))
     cursor2 = conn.execute("SELECT * from size where date_p between ? and ?",(strDate,endDate))
+    cursor3 = conn.execute("SELECT * from cluster_name")
+    cluster_name=cursor3.fetchall()
     sizes_to_average=cursor2.fetchall()
     rows=cursor1.fetchall()
     dataList=[]
     for i in range(1,101):
       if(tableName=='RANK'):
-        dataList.append({'date':endDate,'size':sizes_to_average[1][i],'size_change':sizes_to_average[1][i]-sizes_to_average[0][i],'cluster_no':i,'cluster_name':i,'primary':int(rows[1][i]/sizes_to_average[1][i]),'secondary':int((rows[1][i]/sizes_to_average[1][i])-(rows[0][i]/sizes_to_average[0][i]))})
+        dataList.append({'date':endDate,'size':sizes_to_average[1][i],'size_change':sizes_to_average[1][i]-sizes_to_average[0][i],'cluster_no':i,'cluster_name':cluster_name[i-1][1],'primary':MAX_RANK-int(rows[1][i]/sizes_to_average[1][i]),'secondary':-1*int((rows[1][i]/sizes_to_average[1][i])-(rows[0][i]/sizes_to_average[0][i]))})
       else:
-        dataList.append({'date':endDate,'cluster_no':i,'cluster_name':i,'primary':rows[1][i],'secondary':rows[1][i]-rows[0][i]})
+        dataList.append({'date':endDate,'cluster_no':i,'cluster_name':cluster_name[i-1][1],'primary':rows[1][i],'secondary':rows[1][i]-rows[0][i]})
+    return dataList  
+  except Exception as e:
+    print('error fetching data from rank table', e)
+    return []
+
+def allClusterData1(endDate, strDate="false"):
+  try:
+    if(strDate=="false"):
+      str_to_date = lambda s: date(int(s[0:4]),int(s[5:7]),int(s[8:10]))
+      strDate=str(str_to_date(endDate)-timedelta(days=1))
+    if(strDate<DB_FIRST_DATE or strDate>DB_DATE or endDate>DB_DATE or endDate<DB_FIRST_DATE): return [] 
+    conn = sqlite3.connect(DB_PATH)
+    cursor1 = conn.execute("SELECT * from rank where date_p=? or date_p=?",(strDate,endDate))
+    cursor2 = conn.execute("SELECT * from size where date_p=? or date_p=?",(strDate,endDate))
+    cursor3 = conn.execute("SELECT * from cluster_name")
+    cluster_name=cursor3.fetchall()
+    sizes_to_average=cursor2.fetchall()
+    rows=cursor1.fetchall()
+    dataList=[]
+    for i in range(1,101):
+      dataList.append({'date':endDate,'size':sizes_to_average[1][i],'size_change':sizes_to_average[1][i]-sizes_to_average[0][i],'cluster_no':i,'cluster_name':cluster_name[i-1][1],'primary':MAX_RANK-int(rows[1][i]/sizes_to_average[1][i]),'secondary':-1*int((rows[1][i]/sizes_to_average[1][i])-(rows[0][i]/sizes_to_average[0][i]))})
     return dataList  
   except Exception as e:
     print('error fetching data from rank table', e)
